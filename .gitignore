@@ -1,0 +1,10 @@
+# Datos de ejemplo facilitados (no se suben al repo)
+datos/
+
+# Entorno virtual del laboratorio de carga
+carga/.venv/
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store

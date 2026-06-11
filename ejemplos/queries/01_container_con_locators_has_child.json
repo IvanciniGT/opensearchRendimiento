@@ -1,0 +1,32 @@
+GET lab_content/_search
+{
+  "from": 0,
+  "size": 2,
+  "_source": [
+    "EDITORIAL--CONTAINER.MEDIAID",
+    "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_TITLE"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        { "terms": { "doc_type.keyword": ["CONTAINER"] } },
+        {
+          "has_child": {
+            "type": "level_2",
+            "inner_hits": {
+              "size": 2,
+              "_source": ["STRATA--LOCATOR.TYPEID", "STRATA--LOCATOR.DESCRIPTION"]
+            },
+            "query": {
+              "bool": {
+                "must": [
+                  { "terms": { "doc_type.keyword": ["LOCATOR"] } }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

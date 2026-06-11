@@ -258,4 +258,5 @@ En paralelo lleva una segunda query... que tiene que buscar en S1
 No se puede ejecutar.... en cola.
 Pero no es cola de Pool de ejecutores.
 Es en cola a nivel de SO... el hilo ha pillado la query en el OS
-El hilo no está enrutado a una cpu... te tenemos limitado a nivel de Kernel de Linux!
+El hilo no está enrutado a una cpu... te tenemos limitado a nivel de Kernel de Linux! 
+ 

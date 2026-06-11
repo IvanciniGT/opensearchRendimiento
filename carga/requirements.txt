@@ -1,0 +1,2 @@
+opensearch-py>=2.6.0
+Faker>=25.0.0
