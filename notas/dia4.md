@@ -14,6 +14,12 @@
                                                                         Solo si los shards se hacen muy grandes (> 30Gbs)
                                                                         El problema aquí son las operaciones de mnto
 
+        En vuestro caso:;
+        - Indices de logs: 3 primarios + 1 réplica
+        - Indices de contenidos: 
+          - Posiblemente 1 primario + 2 réplicas puede dar muy buen resultado
+          - Si hay problemas en ingesta (poca ingesta) subimos a 3 primarios + 2 réplicas.
+
     Es fácil subir o bajar replicas de un shard a un número aleatorio? CHUPAO! Eso si... cuidado con los tiempos y la red (FUERA DE HORA PICO)
         Tocar el setting del índice
     Es fácil subir primarios de un shard? Depende:
@@ -22,6 +28,11 @@
         2 -> 3 JODIDO!
         6 -> 3 CHUPAO  Esta operación existe en OS srhink
         3 -> 2 JODIDO!
+
+    La politica de rotación de índices no está bien ajustada. Tenemos índices con 0 documentos... 1000 documentos... de kbs.. mbs
+    No tiene sentido.. hay que rotar cuando vayamos por 5Gbs+
+
+    NOTA: Esto es lo estandar en Opensearch... Luego está vuestro caso de uso: MUY POCA RAM para indexaciones. En un caso como el vuestro, shards de 1Gb... medio giga pueden dar mejor resultado por el tema del file system cache, al haber poca RAM. Pero nunca Kbs, Mbs
 
 4. MAPPINGS                                                 **      Limpiar todo lo que realmente si se indexa y no se usa.
                                                                                 Revisión de mappings es rápida 

@@ -19,11 +19,27 @@ import config
 
 DEFAULT_MAPPING = os.path.join(os.path.dirname(__file__), "..", "datos", "mapping_content.json")
 
+# Mapping minimo AUTOCONTENIDO (--simple): no necesita el fichero propietario de
+# datos/. Solo declara explicitamente el join_field (que no se puede auto-detectar)
+# y deja el resto en dynamic:true (los string se mapean como text+keyword solos).
+# Sirve para que un alumno reproduzca la practica en SU entorno sin nada externo.
+SIMPLE_MAPPINGS = {
+    "properties": {
+        "join_field": {
+            "type": "join",
+            "eager_global_ordinals": True,
+            "relations": {"level_1": ["subclip", "level_2"], "subclip": "subclip_level_2"},
+        }
+    }
+}
+
 
 def main():
     ap = argparse.ArgumentParser(description="Crear indice de laboratorio")
     ap.add_argument("--index", default=config.OS_INDEX)
     ap.add_argument("--mapping", default=DEFAULT_MAPPING, help="Fichero JSON con la clave 'mappings'")
+    ap.add_argument("--simple", action="store_true",
+                    help="Mapping minimo autocontenido (join + dynamic), no usa datos/mapping_content.json")
     ap.add_argument("--shards", type=int, default=config.DEFAULT_SHARDS)
     ap.add_argument("--replicas", type=int, default=config.DEFAULT_REPLICAS)
     ap.add_argument("--refresh-interval", default=None,
@@ -31,9 +47,13 @@ def main():
     ap.add_argument("--recreate", action="store_true", help="Borra el indice si existe")
     args = ap.parse_args()
 
-    with open(args.mapping, encoding="utf-8") as f:
-        mapping_doc = json.load(f)
-    mappings = mapping_doc.get("mappings", mapping_doc)
+    if args.simple:
+        mappings = SIMPLE_MAPPINGS
+        print("[i] Usando mapping minimo autocontenido (--simple)")
+    else:
+        with open(args.mapping, encoding="utf-8") as f:
+            mapping_doc = json.load(f)
+        mappings = mapping_doc.get("mappings", mapping_doc)
 
     index_settings = {
         "number_of_shards": args.shards,

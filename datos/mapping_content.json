@@ -1,0 +1,1122 @@
+{
+  "mappings": {
+    "dynamic": "false",
+    "properties": {
+      "@group_permissions": {
+        "properties": {
+          "groups": {
+            "type": "text",
+            "index": false,
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      },
+      "@ignore_group_permissions": {
+        "type": "boolean"
+      },
+      "@site": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "@timestamp": {
+        "type": "date"
+      },
+      "AST--SOBJECT_CACHE_STATUS": {
+        "properties": {
+          "CACHESTATUS": {
+            "properties": {
+              "STATUS": {
+                "type": "text",
+                "index": false,
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "VOLUMEID": {
+                "type": "long"
+              }
+            }
+          },
+          "SOBJECT": {
+            "properties": {
+              "ID": {
+                "type": "long"
+              },
+              "NODEID": {
+                "type": "long"
+              }
+            }
+          }
+        }
+      },
+      "COLLECTION--COLLECTION": {
+        "properties": {
+          "ID": {
+            "type": "long"
+          },
+          "PARENTID": {
+            "type": "long"
+          },
+          "PLAIN_IPATH": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "COLLECTION--DEPARTMENT": {
+        "properties": {
+          "CREATEDBY": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CREATIONDATE": {
+            "type": "date"
+          },
+          "DISPLAYNAME": {
+            "type": "object",
+            "dynamic": "true"
+          },
+          "ID": {
+            "type": "long"
+          },
+          "IPATH": {
+            "type": "text",
+            "index": false,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "LASTMODIFICATIONDATE": {
+            "type": "date"
+          },
+          "NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "PARENTID": {
+            "type": "long"
+          },
+          "PLAIN_IPATH": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "PLAIN_PATH": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SITE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "STATUS": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "EDITORIAL--CONTAINER": {
+        "properties": {
+          "CONTENTKIND": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CREATEDBY": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CREATIONDATE": {
+            "type": "date"
+          },
+          "DEPLOYMENT": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "ISSUBCLIP": {
+            "type": "boolean"
+          },
+          "LASTMODIFICATIONDATE": {
+            "type": "date"
+          },
+          "MEDIAID": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SITE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SUBTYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+        "properties": {
+          "DC_CREATOR": {
+            "properties": {
+              "ENTITY_NAME": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "DC_DESCRIPTION": {
+            "properties": {
+              "DM_DESCRIPTION": {
+                "type": "text"
+              },
+              "DM_SUBTITLE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "DM_TITLE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "DC_EPISODE_NUM": {
+            "type": "long"
+          },
+          "DC_IDENTIFIER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DC_LOCATION": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "EDITORIAL_CORE--TECHNICAL_INFO": {
+        "properties": {
+          "ASPECT_RATIO": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "AUDIO": {
+            "type": "text"
+          },
+          "BITRATE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CODEC": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "COLOR_PRIMARIES": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DEFINITION": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DISPLAY_NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DURATION": {
+            "type": "long"
+          },
+          "EDIT_RATE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "WRAPPER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "MEDIAFILE--MEDIAFILE": {
+        "properties": {
+          "MEDIAID": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TITLE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TRACKS": {
+            "properties": {
+              "CHANNELS": {
+                "properties": {
+                  "CHANNELNUMBER": {
+                    "type": "long"
+                  },
+                  "HR": {
+                    "properties": {
+                      "SOBJECTID": {
+                        "type": "long",
+                        "index": false
+                      },
+                      "SOBJECTNODEID": {
+                        "type": "long",
+                        "index": false
+                      }
+                    }
+                  }
+                }
+              },
+              "COMPLEMENTS": {
+                "type": "nested"
+              },
+              "TRACKNUMBER": {
+                "type": "long"
+              },
+              "TRACKTYPE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "MEDIAFILE_CORE--MEDIAFILE": {
+        "properties": {
+          "TXREADY": {
+            "type": "boolean"
+          }
+        }
+      },
+      "STRATA--LOCATOR": {
+        "properties": {
+          "CATALOGATIONOBJECT": {
+            "type": "text"
+          },
+          "COLOR": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CONFIDENCE": {
+            "type": "double"
+          },
+          "DESCRIPTION": {
+            "type": "text"
+          },
+          "EDITRATE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "ELEVATION": {
+            "type": "double"
+          },
+          "EVENTLOGID": {
+            "type": "long"
+          },
+          "KEYWORDS": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "LATITUDE": {
+            "type": "double"
+          },
+          "LOCATORID": {
+            "type": "long"
+          },
+          "LONGITUDE": {
+            "type": "double"
+          },
+          "MEDIAID": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "PARTICIPANTS": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SCORE": {
+            "type": "long"
+          },
+          "SEGMENTDURATION": {
+            "type": "long"
+          },
+          "SEGMENTENTRYPOINT": {
+            "type": "long"
+          },
+          "SITE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SOURCEAPPLICATION": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SOURCEENGINE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TEMPLATE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TIME": {
+            "type": "date"
+          },
+          "TYPEID": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--COM": {
+        "properties": {
+          "GRADE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SCOPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--IMF": {
+        "properties": {
+          "MARKER_TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--NONTRANS": {
+        "properties": {
+          "SEGMENT_TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--OVERLAY": {
+        "properties": {
+          "OVERLAY_TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--QC": {
+        "properties": {
+          "FAULT": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "GRADE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--RIGHTS": {
+        "properties": {
+          "CONTRACT": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "RESTRICTION": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SCOPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--SPEECH_ROUND": {
+        "properties": {
+          "DESCRIPTION": {
+            "type": "text"
+          },
+          "DOCUMENT_NUMBER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "KIND": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "PHASE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "POLITICAL_PARTY": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "POST": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SPEAKER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SUBJECT_MATTER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_CORE--SUBJECT_MATTER": {
+        "properties": {
+          "CODE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DESCRIPTION": {
+            "type": "text"
+          },
+          "DOCUMENT_NUMBER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TITLE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "STRATA_DYNAMIC--FOOTBALL": {
+        "properties": {
+          "ANALYSIS_NOTES": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "AWAY_SCORE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "AWAY_TEAM_NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "BALL_SPEED": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "CAMERA_ANGLE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "COMPETITION_NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "COORDINATES": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "DISTANCE_GOAL": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "FIELD_AREA": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "HOME_SCORE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "HOME_TEAM_NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "POSSESION_TYPE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SEASON": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "SUCCESS_PROBABILITY": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "TOUCHES": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "TECHNICAL_CORE--EXIF": {
+        "properties": {
+          "COLOR_SPACE": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "TECHNICAL_CORE--INFO": {
+        "properties": {
+          "DISPLAY_NAME": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "IMF": {
+            "properties": {
+              "TYPE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "WRAPPER": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "TECHNICAL_CORE--TRACKS": {
+        "properties": {
+          "AUDIO": {
+            "properties": {
+              "AUDIO_CODEC": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "AUDIO_TYPE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "ORDER": {
+                "type": "long"
+              }
+            }
+          },
+          "IMAGE": {
+            "properties": {
+              "COLOR_SPACE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "ORDER": {
+                "type": "long"
+              }
+            }
+          },
+          "VIDEO": {
+            "properties": {
+              "COLOR_SPACE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "DEFINITION": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "ORDER": {
+                "type": "long"
+              },
+              "VIDEO_CODEC": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "VR_TYPE": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "doc_type": {
+        "type": "text",
+        "index": false,
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "gelastic_deleted": {
+        "type": "boolean"
+      },
+      "gelastic_indexdate": {
+        "type": "date"
+      },
+      "gelastic_lastmodificationdate": {
+        "type": "date"
+      },
+      "gelastic_preserve_deleted": {
+        "type": "boolean"
+      },
+      "join_field": {
+        "type": "join",
+        "eager_global_ordinals": true,
+        "relations": {
+          "subclip": "subclip_level_2",
+          "level_1": [
+            "subclip",
+            "level_2"
+          ]
+        }
+      }
+    }
+  }
+}

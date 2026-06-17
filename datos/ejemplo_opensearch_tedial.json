@@ -1,0 +1,4548 @@
+{
+  "voyager_content_devel_voyager_site2_site_phase2_en_gb_index_1": {
+    "mappings": {
+      "dynamic": "false",
+      "properties": {
+        "@group_permissions": {
+          "properties": {
+            "groups": {
+              "type": "text",
+              "index": false,
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "@ignore_group_permissions": {
+          "type": "boolean"
+        },
+        "@site": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "@timestamp": {
+          "type": "date"
+        },
+        "AST--SOBJECT_CACHE_STATUS": {
+          "properties": {
+            "CACHESTATUS": {
+              "properties": {
+                "STATUS": {
+                  "type": "text",
+                  "index": false,
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "VOLUMEID": {
+                  "type": "long"
+                }
+              }
+            },
+            "SOBJECT": {
+              "properties": {
+                "ID": {
+                  "type": "long"
+                },
+                "NODEID": {
+                  "type": "long"
+                }
+              }
+            }
+          }
+        },
+        "COLLECTION--COLLECTION": {
+          "properties": {
+            "ID": {
+              "type": "long"
+            },
+            "PARENTID": {
+              "type": "long"
+            },
+            "PLAIN_IPATH": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "COLLECTION--DEPARTMENT": {
+          "properties": {
+            "CREATEDBY": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CREATIONDATE": {
+              "type": "date"
+            },
+            "DISPLAYNAME": {
+              "type": "object",
+              "dynamic": "true"
+            },
+            "ID": {
+              "type": "long"
+            },
+            "IPATH": {
+              "type": "text",
+              "index": false,
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "LASTMODIFICATIONDATE": {
+              "type": "date"
+            },
+            "NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "PARENTID": {
+              "type": "long"
+            },
+            "PLAIN_IPATH": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "PLAIN_PATH": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SITE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "STATUS": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "EDITORIAL--CONTAINER": {
+          "properties": {
+            "CONTENTKIND": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CREATEDBY": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CREATIONDATE": {
+              "type": "date"
+            },
+            "DEPLOYMENT": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "ISSUBCLIP": {
+              "type": "boolean"
+            },
+            "LASTMODIFICATIONDATE": {
+              "type": "date"
+            },
+            "MEDIAID": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SITE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SUBTYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+          "properties": {
+            "DC_CREATOR": {
+              "properties": {
+                "ENTITY_NAME": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "DC_DESCRIPTION": {
+              "properties": {
+                "DM_DESCRIPTION": {
+                  "type": "text"
+                },
+                "DM_SUBTITLE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "DM_TITLE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "DC_EPISODE_NUM": {
+              "type": "long"
+            },
+            "DC_IDENTIFIER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DC_LOCATION": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "EDITORIAL_CORE--TECHNICAL_INFO": {
+          "properties": {
+            "ASPECT_RATIO": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "AUDIO": {
+              "type": "text"
+            },
+            "BITRATE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CODEC": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "COLOR_PRIMARIES": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DEFINITION": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DISPLAY_NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DURATION": {
+              "type": "long"
+            },
+            "EDIT_RATE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "WRAPPER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "MEDIAFILE--MEDIAFILE": {
+          "properties": {
+            "MEDIAID": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TITLE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TRACKS": {
+              "properties": {
+                "CHANNELS": {
+                  "properties": {
+                    "CHANNELNUMBER": {
+                      "type": "long"
+                    },
+                    "HR": {
+                      "properties": {
+                        "SOBJECTID": {
+                          "type": "long",
+                          "index": false
+                        },
+                        "SOBJECTNODEID": {
+                          "type": "long",
+                          "index": false
+                        }
+                      }
+                    }
+                  }
+                },
+                "COMPLEMENTS": {
+                  "type": "nested"
+                },
+                "TRACKNUMBER": {
+                  "type": "long"
+                },
+                "TRACKTYPE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "MEDIAFILE_CORE--MEDIAFILE": {
+          "properties": {
+            "TXREADY": {
+              "type": "boolean"
+            }
+          }
+        },
+        "STRATA--LOCATOR": {
+          "properties": {
+            "CATALOGATIONOBJECT": {
+              "type": "text"
+            },
+            "COLOR": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CONFIDENCE": {
+              "type": "double"
+            },
+            "DESCRIPTION": {
+              "type": "text"
+            },
+            "EDITRATE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "ELEVATION": {
+              "type": "double"
+            },
+            "EVENTLOGID": {
+              "type": "long"
+            },
+            "KEYWORDS": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "LATITUDE": {
+              "type": "double"
+            },
+            "LOCATORID": {
+              "type": "long"
+            },
+            "LONGITUDE": {
+              "type": "double"
+            },
+            "MEDIAID": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "PARTICIPANTS": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SCORE": {
+              "type": "long"
+            },
+            "SEGMENTDURATION": {
+              "type": "long"
+            },
+            "SEGMENTENTRYPOINT": {
+              "type": "long"
+            },
+            "SITE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SOURCEAPPLICATION": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SOURCEENGINE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TEMPLATE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TIME": {
+              "type": "date"
+            },
+            "TYPEID": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--COM": {
+          "properties": {
+            "GRADE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SCOPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--IMF": {
+          "properties": {
+            "MARKER_TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--NONTRANS": {
+          "properties": {
+            "SEGMENT_TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--OVERLAY": {
+          "properties": {
+            "OVERLAY_TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--QC": {
+          "properties": {
+            "FAULT": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "GRADE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--RIGHTS": {
+          "properties": {
+            "CONTRACT": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "RESTRICTION": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SCOPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--SPEECH_ROUND": {
+          "properties": {
+            "DESCRIPTION": {
+              "type": "text"
+            },
+            "DOCUMENT_NUMBER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "KIND": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "PHASE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "POLITICAL_PARTY": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "POST": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SPEAKER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SUBJECT_MATTER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_CORE--SUBJECT_MATTER": {
+          "properties": {
+            "CODE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DESCRIPTION": {
+              "type": "text"
+            },
+            "DOCUMENT_NUMBER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TITLE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "STRATA_DYNAMIC--FOOTBALL": {
+          "properties": {
+            "ANALYSIS_NOTES": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "AWAY_SCORE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "AWAY_TEAM_NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "BALL_SPEED": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "CAMERA_ANGLE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "COMPETITION_NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "COORDINATES": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "DISTANCE_GOAL": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "FIELD_AREA": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "HOME_SCORE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "HOME_TEAM_NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "POSSESION_TYPE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SEASON": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "SUCCESS_PROBABILITY": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TOUCHES": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "TECHNICAL_CORE--EXIF": {
+          "properties": {
+            "COLOR_SPACE": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "TECHNICAL_CORE--INFO": {
+          "properties": {
+            "DISPLAY_NAME": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "IMF": {
+              "properties": {
+                "TYPE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "WRAPPER": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "TECHNICAL_CORE--TRACKS": {
+          "properties": {
+            "AUDIO": {
+              "properties": {
+                "AUDIO_CODEC": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "AUDIO_TYPE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "ORDER": {
+                  "type": "long"
+                }
+              }
+            },
+            "IMAGE": {
+              "properties": {
+                "COLOR_SPACE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "ORDER": {
+                  "type": "long"
+                }
+              }
+            },
+            "VIDEO": {
+              "properties": {
+                "COLOR_SPACE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "DEFINITION": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "ORDER": {
+                  "type": "long"
+                },
+                "VIDEO_CODEC": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "VR_TYPE": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "doc_type": {
+          "type": "text",
+          "index": false,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "gelastic_deleted": {
+          "type": "boolean"
+        },
+        "gelastic_indexdate": {
+          "type": "date"
+        },
+        "gelastic_lastmodificationdate": {
+          "type": "date"
+        },
+        "gelastic_preserve_deleted": {
+          "type": "boolean"
+        },
+        "join_field": {
+          "type": "join",
+          "eager_global_ordinals": true,
+          "relations": {
+            "subclip": "subclip_level_2",
+            "level_1": [
+              "subclip",
+              "level_2"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+# Query Clips/Subclips
+
+GET voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "doc_type.keyword": "CONTAINER"
+          }
+        },
+        {
+          "term": {
+            "EDITORIAL--CONTAINER.ISSUBCLIP": false
+          }
+        }
+      ],
+      "must": [
+        {
+          "has_child": {
+            "type": "subclip",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "terms": {
+                      "doc_type.keyword": [
+                        "CONTAINER"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "inner_hits": {
+              "name": "parent_level_1",
+              "size": 1
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "took": 14,
+  "timed_out": false,
+  "_shards": {
+    "total": 4,
+    "successful": 4,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 12,
+      "relation": "eq"
+    },
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "Water1",
+        "_score": 1,
+        "_routing": "Water1",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "Water1",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-04-17T10:47:29.827+00:00",
+            "LASTMODIFICATIONDATE": "2026-04-17T10:47:29.827+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@timestamp": "2026-06-09T11:20:54.036Z",
+          "gelastic_indexdate": 1781004087567,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004054036,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055305
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "Water1",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "Water1",
+            "gelastic_lastmodificationdate": 1781004055305
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Water1"
+            },
+            "DC_IDENTIFIER": "Water1",
+            "gelastic_lastmodificationdate": 1781004054005
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "25 1",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "DURATION": 622,
+            "DISPLAY_NAME": "ISO-XAVC",
+            "BITRATE": "20230493",
+            "gelastic_lastmodificationdate": 1781004054036
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 1,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "Water1S00000:Water1",
+                  "_score": 1,
+                  "_routing": "Water1",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "Water1S00000:Water1",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-04-29T12:22:21.555+00:00",
+                      "LASTMODIFICATIONDATE": "2026-04-29T12:22:21.555+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053774
+                    },
+                    "@timestamp": "2026-06-09T11:20:54.036Z",
+                    "gelastic_indexdate": 1781004087741,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053774
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "Water1",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004054036,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "Water1S00000:Water1",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055306
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) Water1"
+                      },
+                      "DC_IDENTIFIER": "Water1S00000:Water1",
+                      "gelastic_lastmodificationdate": 1781004054036
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "XAVC",
+                      "EDIT_RATE": "25 1",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "QT/ISO",
+                      "ASPECT_RATIO": "16:9",
+                      "DURATION": 65,
+                      "DISPLAY_NAME": "ISO-XAVC",
+                      "BITRATE": "20230493",
+                      "gelastic_lastmodificationdate": 1781004054036
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "AML030326002",
+        "_score": 1,
+        "_routing": "AML030326002",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "AML030326002",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-05T15:27:45.369+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-05T15:27:45.369+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@timestamp": "2026-06-09T11:20:58.994Z",
+          "gelastic_indexdate": 1781004098771,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058994,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": false,
+            "gelastic_lastmodificationdate": 1781004055300
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "AML030326002",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 1,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 2,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 3,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 4,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 5,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 6,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 7,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 8,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 9,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 10,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 11,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 12,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 13,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 14,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 15,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "Wonder Woman 1984",
+            "gelastic_lastmodificationdate": 1781004055300
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Wonder Woman 1984",
+              "DM_SUBTITLE": "DC: Wonder Woman 1984"
+            },
+            "DC_IDENTIFIER": "AML030326002",
+            "gelastic_lastmodificationdate": 1781004053982,
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ]
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "MPEG2",
+            "EDIT_RATE": "25 1",
+            "WRAPPER": "MXF",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM",
+            "DURATION": 132820,
+            "DISPLAY_NAME": "MXF MPEG2",
+            "BITRATE": "10000000",
+            "gelastic_lastmodificationdate": 1781004053982
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "July"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "001"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/July",
+            "gelastic_lastmodificationdate": 1781004058994,
+            "NAME": "July",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "ID": 16,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/001"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 2,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "AML030326002S00001:AML030326002",
+                  "_score": 1,
+                  "_routing": "AML030326002",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "AML030326002S00001:AML030326002",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-13T11:15:42.319+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-13T11:15:42.319+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053774
+                    },
+                    "@timestamp": "2026-06-09T11:20:54.003Z",
+                    "gelastic_indexdate": 1781004086446,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053774
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "AML030326002",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004054003,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "AML030326002S00001:AML030326002",
+                      "TRACKS": [
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "VIDEO"
+                        },
+                        {
+                          "TRACKNUMBER": 1,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 2,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 3,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 4,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 5,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 6,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 7,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 8,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 9,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 10,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 11,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 12,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 13,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 14,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 15,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055302
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) Wonder Woman 1984"
+                      },
+                      "DC_IDENTIFIER": "AML030326002S00001:AML030326002",
+                      "gelastic_lastmodificationdate": 1781004054003
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "MPEG2",
+                      "EDIT_RATE": "25 1",
+                      "WRAPPER": "MXF",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM",
+                      "DURATION": 51,
+                      "DISPLAY_NAME": "MXF MPEG2",
+                      "BITRATE": "10000000",
+                      "gelastic_lastmodificationdate": 1781004054003
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "AMLOppenheimer090326001",
+        "_score": 1,
+        "_routing": "AMLOppenheimer090326001",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "AMLOppenheimer090326001",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-09T14:24:47.404+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-09T14:24:47.404+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@timestamp": "2026-06-09T11:20:58.994Z",
+          "gelastic_indexdate": 1781004098772,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058994,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "AMLOppenheimer090326001",
+            "TRACKS": [
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ],
+                "TRACKTYPE": "AUDIO"
+              },
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ],
+                "TRACKTYPE": "VIDEO"
+              },
+              {
+                "TRACKNUMBER": 1,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 2
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 3
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 4
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 5
+                  }
+                ],
+                "TRACKTYPE": "AUDIO"
+              }
+            ],
+            "TITLE": "Oppenheimer",
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Oppenheimer",
+              "DM_SUBTITLE": "Oppenheimer"
+            },
+            "DC_IDENTIFIER": "AMLOppenheimer090326001",
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ],
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "gelastic_lastmodificationdate": 1781004053983
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "H264",
+            "EDIT_RATE": "24 1",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "MXF-OP1a",
+            "ASPECT_RATIO": "160:73",
+            "AUDIO": "PCM,PCM",
+            "DURATION": 4557,
+            "DISPLAY_NAME": "MXF-H264",
+            "BITRATE": "3467914",
+            "gelastic_lastmodificationdate": 1781004054004
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "July"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "001"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/July",
+            "gelastic_lastmodificationdate": 1781004058994,
+            "NAME": "July",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "ID": 16,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/001"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 1,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "AMLOppenheimer090326001S00000:AMLOppenheimer090326001",
+                  "_score": 1,
+                  "_routing": "AMLOppenheimer090326001",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "AMLOppenheimer090326001S00000:AMLOppenheimer090326001",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-10T20:00:50.125+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-10T20:00:50.125+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@timestamp": "2026-06-09T11:20:54.003Z",
+                    "gelastic_indexdate": 1781004086474,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "AMLOppenheimer090326001",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004054003,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "AMLOppenheimer090326001S00000:AMLOppenheimer090326001",
+                      "TRACKS": [
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "VIDEO"
+                        },
+                        {
+                          "TRACKNUMBER": 1,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 2
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 3
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 4
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 5
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055301
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "Test Subclip"
+                      },
+                      "DC_IDENTIFIER": "AMLOppenheimer090326001S00000:AMLOppenheimer090326001",
+                      "gelastic_lastmodificationdate": 1781004053983
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "H264",
+                      "EDIT_RATE": "24 1",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "MXF-OP1a",
+                      "ASPECT_RATIO": "160:73",
+                      "AUDIO": "PCM,PCM",
+                      "DURATION": 831,
+                      "DISPLAY_NAME": "MXF-H264",
+                      "BITRATE": "3467914",
+                      "gelastic_lastmodificationdate": 1781004054003
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "EM_DiaIntCooperanteF",
+        "_score": 1,
+        "_routing": "EM_DiaIntCooperanteF",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "EM_DiaIntCooperanteF",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-02T14:10:51.358+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-02T14:10:51.358+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@timestamp": "2026-06-09T11:20:55.298Z",
+          "gelastic_indexdate": 1781004078929,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004055298,
+          "gelastic_deleted": false,
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "EM_DiaIntCooperanteF"
+            },
+            "DC_IDENTIFIER": "EM_DiaIntCooperanteF",
+            "gelastic_lastmodificationdate": 1781004053889
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "SD",
+            "CODEC": "AVC",
+            "EDIT_RATE": "30 1",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "MPEG-4",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 4275,
+            "DISPLAY_NAME": "MPEG-4 AVC",
+            "BITRATE": "769048",
+            "gelastic_lastmodificationdate": 1781004053889
+          },
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055298
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "EM_DiaIntCooperanteF",
+            "TRACKS": [
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ],
+                "TRACKTYPE": "AUDIO"
+              },
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ],
+                "TRACKTYPE": "VIDEO"
+              }
+            ],
+            "TITLE": "EM_DiaIntCooperanteF",
+            "gelastic_lastmodificationdate": 1781004055298
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 5,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "EM_DiaIntCooperanteFS00000:EM_DiaIntCooperanteF",
+                  "_score": 1,
+                  "_routing": "EM_DiaIntCooperanteF",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "EM_DiaIntCooperanteFS00000:EM_DiaIntCooperanteF",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-03T08:13:05.148+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-03T08:13:05.148+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@timestamp": "2026-06-09T11:20:55.298Z",
+                    "gelastic_indexdate": 1781004078956,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "EM_DiaIntCooperanteF",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004055298,
+                    "gelastic_deleted": false,
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) EM_DiaIntCooperanteF"
+                      },
+                      "DC_IDENTIFIER": "EM_DiaIntCooperanteFS00000:EM_DiaIntCooperanteF",
+                      "gelastic_lastmodificationdate": 1781004053921
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "SD",
+                      "CODEC": "AVC",
+                      "EDIT_RATE": "30 1",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "MPEG-4",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "AAC",
+                      "DURATION": 618,
+                      "DISPLAY_NAME": "MPEG-4 AVC",
+                      "BITRATE": "769048",
+                      "gelastic_lastmodificationdate": 1781004053921
+                    },
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "EM_DiaIntCooperanteFS00000:EM_DiaIntCooperanteF",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055298
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "AML050326002",
+        "_score": 1,
+        "_routing": "AML050326002",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "AML050326002",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-05T16:03:53.940+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-05T16:03:53.940+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@timestamp": "2026-06-09T11:20:58.994Z",
+          "gelastic_indexdate": 1781004098771,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053772
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058994,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "AML050326002",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 1,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 2,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 3,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              }
+            ],
+            "TITLE": "Wonder Woman 1984",
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "60000 1001",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "MXF-OP1a",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM",
+            "DURATION": 2712,
+            "DISPLAY_NAME": "MXF-XAVC",
+            "BITRATE": "226609870",
+            "gelastic_lastmodificationdate": 1781004053982
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "CBL",
+              "DM_SUBTITLE": "CBL"
+            },
+            "DC_IDENTIFIER": "AML050326002",
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ],
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "gelastic_lastmodificationdate": 1781004053982
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "July"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "001"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/July",
+            "gelastic_lastmodificationdate": 1781004058994,
+            "NAME": "July",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "ID": 16,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/001"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 2,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "AML050326002S00007:AML050326002",
+                  "_score": 1,
+                  "_routing": "AML050326002",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "AML050326002S00007:AML050326002",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-06T13:18:20.707+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-06T13:18:20.707+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@timestamp": "2026-06-09T11:20:53.982Z",
+                    "gelastic_indexdate": 1781004083911,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "AML050326002",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004053982,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "AML050326002S00007:AML050326002",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 1,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 2,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 3,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055301
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) CBL"
+                      },
+                      "DC_IDENTIFIER": "AML050326002S00007:AML050326002",
+                      "gelastic_lastmodificationdate": 1781004053982
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "XAVC",
+                      "EDIT_RATE": "60000 1001",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "MXF-OP1a",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "PCM,PCM,PCM,PCM,PCM,PCM,PCM,PCM",
+                      "DURATION": 400,
+                      "DISPLAY_NAME": "MXF-XAVC",
+                      "BITRATE": "226609870",
+                      "gelastic_lastmodificationdate": 1781004053982
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "JFC2402281535",
+        "_score": 1,
+        "_routing": "JFC2402281535",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "JFC2402281535",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-02-29T07:40:13.835+00:00",
+            "LASTMODIFICATIONDATE": "2024-02-29T07:40:13.835+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053724
+          },
+          "@timestamp": "2026-06-09T11:20:53.776Z",
+          "gelastic_indexdate": 1781004067890,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone",
+              "ext_b51052f8-8b90-4acc-bb38-ac8e5738737b",
+              "ext_0addc429-d82d-4f6e-a6d7-3073f4f034a0",
+              "ext_ec7e0e03-be93-4997-9459-fd433ac26651"
+            ],
+            "gelastic_lastmodificationdate": 1781004053724
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004053776,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": false,
+            "gelastic_lastmodificationdate": 1781004055260
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "JFC2402281535",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "JFC2402281535",
+            "gelastic_lastmodificationdate": 1781004055260
+          },
+          "EDITORIAL_EXTENSION--LEGACY": {
+            "DATERANGE": {
+              "FROM": "2026-02-16T23:00:00.000Z",
+              "TO": "2026-02-28T22:59:59.999Z"
+            },
+            "gelastic_lastmodificationdate": 1781004053775
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "60 1",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 4152,
+            "DISPLAY_NAME": "ISO-XAVC",
+            "BITRATE": "4900000",
+            "gelastic_lastmodificationdate": 1781004053776
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Wild Life Documentary"
+            },
+            "DC_IDENTIFIER": "JFC2402281535",
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ],
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "gelastic_lastmodificationdate": 1781004053776
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 4,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "JFC2402281535S00010:JFC2402281535",
+                  "_score": 1,
+                  "_routing": "JFC2402281535",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "JFC2402281535S00010:JFC2402281535",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-03T13:26:38.622+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-03T13:26:38.622+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@timestamp": "2026-06-09T11:20:55.300Z",
+                    "gelastic_indexdate": 1781004079151,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "JFC2402281535",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004055300,
+                    "gelastic_deleted": false,
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) Wild Life Documentary"
+                      },
+                      "DC_IDENTIFIER": "JFC2402281535S00010:JFC2402281535",
+                      "gelastic_lastmodificationdate": 1781004053935
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "XAVC",
+                      "EDIT_RATE": "60 1",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "QT/ISO",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "AAC",
+                      "DURATION": 1168,
+                      "DISPLAY_NAME": "ISO-XAVC",
+                      "BITRATE": "4900000",
+                      "gelastic_lastmodificationdate": 1781004053941
+                    },
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "JFC2402281535S00010:JFC2402281535",
+                      "TRACKS": [
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "VIDEO"
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055300
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "TED_Phase2_572",
+        "_score": 1,
+        "_routing": "TED_Phase2_572",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "TED_Phase2_572",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-02-18T09:53:26.230+00:00",
+            "LASTMODIFICATIONDATE": "2026-02-18T09:53:26.230+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "administrator",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053768
+          },
+          "@timestamp": "2026-06-09T11:20:54.046Z",
+          "gelastic_indexdate": 1781004089981,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone",
+              "ext_f867447b-45c6-464d-ad83-cc34abd97cb6"
+            ],
+            "gelastic_lastmodificationdate": 1781004053768
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004054046,
+          "gelastic_deleted": false,
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "DMP Sequence exported from Premiere"
+            },
+            "DC_IDENTIFIER": "TED_Phase2_572",
+            "gelastic_lastmodificationdate": 1781004053888
+          },
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": false,
+            "gelastic_lastmodificationdate": 1781004055297
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "TED_Phase2_572",
+            "TRACKS": [
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ],
+                "TRACKTYPE": "AUDIO"
+              },
+              {
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ],
+                "TRACKTYPE": "VIDEO"
+              }
+            ],
+            "TITLE": "DMP Secuencia 01 (Premiere Sequence Export)",
+            "gelastic_lastmodificationdate": 1781004055297
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "24000 1001",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 2192,
+            "DISPLAY_NAME": "ISO-XAVC",
+            "BITRATE": "19572693",
+            "gelastic_lastmodificationdate": 1781004054046
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 2,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "TED_Phase2_572S00002:TED_Phase2_572",
+                  "_score": 1,
+                  "_routing": "TED_Phase2_572",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "TED_Phase2_572S00002:TED_Phase2_572",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-02T11:05:19.685+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-02T11:05:19.685+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@timestamp": "2026-06-09T11:20:55.297Z",
+                    "gelastic_indexdate": 1781004078871,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "name": "subclip",
+                      "parent": "TED_Phase2_572"
+                    },
+                    "gelastic_lastmodificationdate": 1781004055297,
+                    "gelastic_deleted": false,
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "XAVC",
+                      "EDIT_RATE": "24000 1001",
+                      "WRAPPER": "QT/ISO",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "AAC",
+                      "DURATION": 150,
+                      "DISPLAY_NAME": "ISO-XAVC",
+                      "BITRATE": "19572693",
+                      "gelastic_lastmodificationdate": 1781004053888
+                    },
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "TED_Phase2_572S00002:TED_Phase2_572",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055297
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "MGOPeakyBlindersTheImmortal",
+        "_score": 1,
+        "_routing": "MGOPeakyBlindersTheImmortal",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "MGOPeakyBlindersTheImmortal",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-04-10T05:19:06.815+00:00",
+            "LASTMODIFICATIONDATE": "2026-04-10T05:19:06.815+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@timestamp": "2026-06-09T11:20:58.995Z",
+          "gelastic_indexdate": 1781004098841,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058995,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055304
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "MGOPeakyBlindersTheImmortal",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "Peaky Blinders: The Imnmortal Man",
+            "gelastic_lastmodificationdate": 1781004055304
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Peaky Blinders: The Imnmortal Man",
+              "DM_SUBTITLE": "Peaky Blinders: The Imnmortal Man Official Trailer"
+            },
+            "DC_IDENTIFIER": "MGOPeakyBlindersTheImmortal",
+            "gelastic_lastmodificationdate": 1781004054005,
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ]
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "24 1",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 3842,
+            "DISPLAY_NAME": "ISO-XAVC",
+            "BITRATE": "2440106",
+            "gelastic_lastmodificationdate": 1781004054005
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "July"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "001"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/July",
+            "gelastic_lastmodificationdate": 1781004058995,
+            "NAME": "July",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "ID": 16,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/001"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 1,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "MGOPeakyBlindersTheImmortalS00000:MGOPeakyBlindersTheImmortal",
+                  "_score": 1,
+                  "_routing": "MGOPeakyBlindersTheImmortal",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "MGOPeakyBlindersTheImmortalS00000:MGOPeakyBlindersTheImmortal",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-11T15:54:29.199+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-11T15:54:29.199+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@timestamp": "2026-06-09T11:20:54.000Z",
+                    "gelastic_indexdate": 1781004085131,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "MGOPeakyBlindersTheImmortal",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004054000,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "MGOPeakyBlindersTheImmortalS00000:MGOPeakyBlindersTheImmortal",
+                      "TRACKS": [
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ],
+                          "TRACKTYPE": "AUDIO"
+                        },
+                        {
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ],
+                          "TRACKTYPE": "VIDEO"
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055301
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "TESTTTT"
+                      },
+                      "DC_IDENTIFIER": "MGOPeakyBlindersTheImmortalS00000:MGOPeakyBlindersTheImmortal",
+                      "gelastic_lastmodificationdate": 1781004054000
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "XAVC",
+                      "EDIT_RATE": "24 1",
+                      "COLOR_PRIMARIES": "BT.709",
+                      "WRAPPER": "QT/ISO",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "AAC",
+                      "DURATION": 992,
+                      "DISPLAY_NAME": "ISO-XAVC",
+                      "BITRATE": "2440106",
+                      "gelastic_lastmodificationdate": 1781004054000
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "OptaTest200325001",
+        "_score": 1,
+        "_routing": "OptaTest200325001",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "OptaTest200325001",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2025-03-20T09:00:16.819+00:00",
+            "LASTMODIFICATIONDATE": "2026-05-08T11:19:01.794+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053774
+          },
+          "@timestamp": "2026-06-09T11:20:58.995Z",
+          "gelastic_indexdate": 1781004098867,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053774
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058995,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055280
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "OptaTest200325001",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "OptaTest200325001",
+            "gelastic_lastmodificationdate": 1781004055280
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "Barcelona-RealMadrid (Copa del Rey T18-19)"
+            },
+            "DC_IDENTIFIER": "OptaTest200325001",
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ],
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "gelastic_lastmodificationdate": 1781004053922
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "H264",
+            "EDIT_RATE": "50 1",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 353131,
+            "DISPLAY_NAME": "ISO-H264",
+            "BITRATE": "1200000",
+            "gelastic_lastmodificationdate": 1781004053934
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "July"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "001"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/July",
+            "gelastic_lastmodificationdate": 1781004058995,
+            "NAME": "July",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-12T11:19:28.997+00:00",
+            "ID": 16,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/001"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 3,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "OptaTest200325001S00000:OptaTest200325001",
+                  "_score": 1,
+                  "_routing": "OptaTest200325001",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "OptaTest200325001S00000:OptaTest200325001",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-03-03T12:29:29.444+00:00",
+                      "LASTMODIFICATIONDATE": "2026-03-03T12:29:29.444+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@timestamp": "2026-06-09T11:20:55.299Z",
+                    "gelastic_indexdate": 1781004079118,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053772
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "parent": "OptaTest200325001",
+                      "name": "subclip"
+                    },
+                    "gelastic_lastmodificationdate": 1781004055299,
+                    "gelastic_deleted": false,
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "DEFINITION": "HD",
+                      "CODEC": "H264",
+                      "EDIT_RATE": "50 1",
+                      "WRAPPER": "QT/ISO",
+                      "ASPECT_RATIO": "16:9",
+                      "AUDIO": "AAC",
+                      "DURATION": 16671,
+                      "DISPLAY_NAME": "ISO-H264",
+                      "BITRATE": "1200000",
+                      "gelastic_lastmodificationdate": 1781004053923
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) Barcelona-RealMadrid (Copa del Rey T18-19)"
+                      },
+                      "DC_IDENTIFIER": "OptaTest200325001S00000:OptaTest200325001",
+                      "gelastic_lastmodificationdate": 1781004053923
+                    },
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "OptaTest200325001S00000:OptaTest200325001",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "HR": [
+                                {
+                                  "SOBJECTNODEID": 0
+                                }
+                              ],
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055299
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "SCBEdit002",
+        "_score": 1,
+        "_routing": "SCBEdit002",
+        "_source": {
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "SCBEdit002",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-09T14:52:40.191+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-09T14:52:40.191+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@timestamp": "2026-06-09T11:20:58.996Z",
+          "gelastic_indexdate": 1781004098929,
+          "doc_type": "CONTAINER",
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@site": "Phase2",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004058996,
+          "gelastic_deleted": false,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": true,
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "SCBEdit002",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              }
+            ],
+            "TITLE": "SCBEdit002",
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_CREATOR": [
+              {
+                "ENTITY_NAME": "Name1"
+              },
+              {
+                "ENTITY_NAME": "Name2"
+              }
+            ],
+            "DC_EPISODE_NUM": 8,
+            "DC_DESCRIPTION": {
+              "DM_TITLE": "SCBEdit002"
+            },
+            "DC_IDENTIFIER": "SCBEdit002",
+            "gelastic_lastmodificationdate": 1781004053983,
+            "DC_LOCATION": [
+              "LOCATION1",
+              "LOCATION2"
+            ]
+          },
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "CODEC": "WMV",
+            "EDIT_RATE": "25 1",
+            "DURATION": 0,
+            "gelastic_lastmodificationdate": 1781004053998
+          },
+          "COLLECTION--DEPARTMENT": {
+            "DISPLAYNAME": {
+              "en-GB": "NewObjectCollection"
+            },
+            "SITE": "Phase2",
+            "CREATIONDATE": "2024-07-15T10:55:40.472+00:00",
+            "IPATH": [
+              "000",
+              "000",
+              "002"
+            ],
+            "PLAIN_PATH": "/sworkTests/Phase2/NewObjectCollection",
+            "gelastic_lastmodificationdate": 1781004058996,
+            "NAME": "NewObjectCollection",
+            "STATUS": "ONLINE",
+            "PARENTID": 13,
+            "LASTMODIFICATIONDATE": "2024-07-15T10:55:40.472+00:00",
+            "ID": 17,
+            "CREATEDBY": "swork",
+            "PLAIN_IPATH": "/000/000/002"
+          }
+        },
+        "inner_hits": {
+          "parent_level_1": {
+            "hits": {
+              "total": {
+                "value": 3,
+                "relation": "eq"
+              },
+              "max_score": 1,
+              "hits": [
+                {
+                  "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+                  "_id": "SCBEdit002S00001:SCBEdit002",
+                  "_score": 1,
+                  "_routing": "SCBEdit002",
+                  "_source": {
+                    "EDITORIAL--CONTAINER": {
+                      "SUBTYPE": "VIDEO",
+                      "MEDIAID": "SCBEdit002S00001:SCBEdit002",
+                      "SITE": "Phase2",
+                      "CREATIONDATE": "2026-04-17T07:23:01.345+00:00",
+                      "LASTMODIFICATIONDATE": "2026-04-17T07:23:01.345+00:00",
+                      "TYPE": "Multimedia",
+                      "CREATEDBY": "administrator",
+                      "ISSUBCLIP": true,
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@timestamp": "2026-06-09T11:20:54.005Z",
+                    "gelastic_indexdate": 1781004086950,
+                    "doc_type": "CONTAINER",
+                    "@group_permissions": {
+                      "groups": [
+                        "everyone"
+                      ],
+                      "gelastic_lastmodificationdate": 1781004053773
+                    },
+                    "@site": "Phase2",
+                    "join_field": {
+                      "name": "subclip",
+                      "parent": "SCBEdit002"
+                    },
+                    "gelastic_lastmodificationdate": 1781004054005,
+                    "gelastic_deleted": false,
+                    "MEDIAFILE--MEDIAFILE": {
+                      "MEDIAID": "SCBEdit002S00001:SCBEdit002",
+                      "TRACKS": [
+                        {
+                          "TRACKTYPE": "AUDIO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "CHANNELNUMBER": 0
+                            },
+                            {
+                              "CHANNELNUMBER": 1
+                            }
+                          ]
+                        },
+                        {
+                          "TRACKTYPE": "VIDEO",
+                          "TRACKNUMBER": 0,
+                          "CHANNELS": [
+                            {
+                              "CHANNELNUMBER": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "TITLE": "New EDL",
+                      "gelastic_lastmodificationdate": 1781004055304
+                    },
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+                      "DC_DESCRIPTION": {
+                        "DM_TITLE": "(Subclip) SCBEdit002 sólo portero"
+                      },
+                      "DC_IDENTIFIER": "SCBEdit002S00001:SCBEdit002",
+                      "gelastic_lastmodificationdate": 1781004054005
+                    },
+                    "EDITORIAL_CORE--TECHNICAL_INFO": {
+                      "CODEC": "WMV",
+                      "EDIT_RATE": "25 1",
+                      "DURATION": 0,
+                      "gelastic_lastmodificationdate": 1781004054005
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
+
+# Query Containers -> Locators
+
+GET voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index/_search
+{
+  "from": 0,
+  "size": 20,
+  "_source": {
+    "excludes": [
+      "knn_*"
+    ]
+  },
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "gelastic_deleted": false
+          }
+        },
+        {
+          "term": {
+            "doc_type.keyword": "CONTAINER"
+          }
+        }
+      ],
+      "must": [
+        {
+          "bool": {
+            "should": [
+              {
+                "simple_query_string": {
+                  "query": "MGOTestRelations",
+                  "fields": [
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_DESCRIPTION",
+                    "EDITORIAL--CONTAINER.MEDIAID.keyword",
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_SUBTITLE",
+                    "EDITORIAL--CONTAINER.SUBTYPE.keyword",
+                    "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_TITLE",
+                    "EDITORIAL--CONTAINER.TYPE.keyword"
+                  ],
+                  "default_operator": "AND"
+                }
+              },
+              {
+                "has_child": {
+                  "type": "level_2",
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "terms": {
+                            "doc_type.keyword": [
+                              "LOCATOR"
+                            ]
+                          }
+                        },
+                        {
+                          "simple_query_string": {
+                            "query": "MGOTestRelations",
+                            "fields": [
+                              "STRATA--LOCATOR.PARTICIPANTS"
+                            ],
+                            "default_operator": "AND"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "inner_hits": {
+                    "name": "child_level_2_google_highlight",
+                    "size": 1,
+                    "_source": false,
+                    "highlight": {
+                      "pre_tags": [
+                        "<em>"
+                      ],
+                      "post_tags": [
+                        "</em>"
+                      ],
+                      "fields": {
+                        "STRATA--LOCATOR.PARTICIPANTS": {}
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "EDITORIAL--CONTAINER.SUBTYPE.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL--CONTAINER.SUBTYPE.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.CODEC.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL_CORE--TECHNICAL_INFO.CODEC.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.EDIT_RATE.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL_CORE--TECHNICAL_INFO.EDIT_RATE.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    },
+    "EDITORIAL--CONTAINER.TYPE.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL--CONTAINER.TYPE.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.DEFINITION.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL_CORE--TECHNICAL_INFO.DEFINITION.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.WRAPPER.keyword": {
+      "aggs": {
+        "facets_counter": {
+          "terms": {
+            "field": "EDITORIAL_CORE--TECHNICAL_INFO.WRAPPER.keyword",
+            "size": 100
+          }
+        }
+      },
+      "filter": {
+        "match_all": {}
+      }
+    }
+  },
+  "sort": [
+    {
+      "EDITORIAL--CONTAINER.CREATIONDATE": {
+        "order": "desc",
+        "missing": "_last"
+      }
+    }
+  ],
+  "highlight": {
+    "pre_tags": [
+      "<em>"
+    ],
+    "post_tags": [
+      "</em>"
+    ],
+    "fields": {
+      "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_DESCRIPTION": {},
+      "EDITORIAL--CONTAINER.MEDIAID": {},
+      "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_SUBTITLE": {},
+      "EDITORIAL--CONTAINER.SUBTYPE": {},
+      "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_TITLE": {},
+      "EDITORIAL--CONTAINER.TYPE": {}
+    }
+  }
+}
+
+
+
+{
+  "took": 10,
+  "timed_out": false,
+  "_shards": {
+    "total": 4,
+    "successful": 4,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "voyager_content_sworkdev02_vyg_phase2_site_phase2_en_gb_index_0",
+        "_id": "MGOTestRelations",
+        "_score": null,
+        "_routing": "MGOTestRelations",
+        "_source": {
+          "EDITORIAL_CORE--TECHNICAL_INFO": {
+            "DEFINITION": "HD",
+            "CODEC": "XAVC",
+            "EDIT_RATE": "24000 1001",
+            "COLOR_PRIMARIES": "BT.709",
+            "WRAPPER": "QT/ISO",
+            "ASPECT_RATIO": "16:9",
+            "AUDIO": "AAC",
+            "DURATION": 289,
+            "DISPLAY_NAME": "ISO-XAVC",
+            "BITRATE": "1200000",
+            "gelastic_lastmodificationdate": 1781004053998
+          },
+          "EDITORIAL--CONTAINER": {
+            "SUBTYPE": "VIDEO",
+            "MEDIAID": "MGOTestRelations",
+            "SITE": "Phase2",
+            "CREATIONDATE": "2026-03-11T08:53:48.637+00:00",
+            "LASTMODIFICATIONDATE": "2026-03-11T08:53:48.637+00:00",
+            "TYPE": "Multimedia",
+            "CREATEDBY": "swork",
+            "ISSUBCLIP": false,
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "MEDIAFILE--MEDIAFILE": {
+            "MEDIAID": "MGOTestRelations",
+            "TRACKS": [
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      },
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      },
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "VIDEO",
+                "TRACKNUMBER": 0,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      },
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  }
+                ]
+              },
+              {
+                "TRACKTYPE": "AUDIO",
+                "TRACKNUMBER": 1,
+                "CHANNELS": [
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      },
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 0
+                  },
+                  {
+                    "HR": [
+                      {
+                        "SOBJECTNODEID": 0
+                      },
+                      {
+                        "SOBJECTNODEID": 0
+                      }
+                    ],
+                    "CHANNELNUMBER": 1
+                  }
+                ]
+              }
+            ],
+            "TITLE": "MGOTestRelations",
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "doc_type": "CONTAINER",
+          "join_field": {
+            "name": "level_1"
+          },
+          "gelastic_lastmodificationdate": 1781004053998,
+          "MEDIAFILE_CORE--MEDIAFILE": {
+            "TXREADY": false,
+            "gelastic_lastmodificationdate": 1781004055301
+          },
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE": {
+            "DC_DESCRIPTION": {
+              "DM_DESCRIPTION": "test6",
+              "DM_TITLE": "MGOTestRelations"
+            },
+            "DC_IDENTIFIER": "MGOTestRelations",
+            "gelastic_lastmodificationdate": 1781004053998
+          },
+          "@timestamp": "2026-06-09T11:20:53.998Z",
+          "gelastic_indexdate": 1781004084474,
+          "@group_permissions": {
+            "groups": [
+              "everyone"
+            ],
+            "gelastic_lastmodificationdate": 1781004053773
+          },
+          "@site": "Phase2",
+          "gelastic_deleted": false
+        },
+        "highlight": {
+          "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_TITLE": [
+            "<em>MGOTestRelations</em>"
+          ]
+        },
+        "sort": [
+          1773219228637
+        ],
+        "inner_hits": {
+          "child_level_2_google_highlight": {
+            "hits": {
+              "total": {
+                "value": 0,
+                "relation": "eq"
+              },
+              "max_score": null,
+              "hits": []
+            }
+          }
+        }
+      }
+    ]
+  },
+  "aggregations": {
+    "EDITORIAL--CONTAINER.SUBTYPE.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "VIDEO",
+            "doc_count": 1
+          }
+        ]
+      }
+    },
+    "EDITORIAL--CONTAINER.TYPE.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "Multimedia",
+            "doc_count": 1
+          }
+        ]
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.WRAPPER.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "QT/ISO",
+            "doc_count": 1
+          }
+        ]
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.EDIT_RATE.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "24000 1001",
+            "doc_count": 1
+          }
+        ]
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.CODEC.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "XAVC",
+            "doc_count": 1
+          }
+        ]
+      }
+    },
+    "EDITORIAL_CORE--TECHNICAL_INFO.DEFINITION.keyword": {
+      "doc_count": 1,
+      "facets_counter": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "HD",
+            "doc_count": 1
+          }
+        ]
+      }
+    }
+  }
+}

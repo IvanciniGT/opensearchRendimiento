@@ -1,0 +1,101 @@
+# =============================================================================
+# Cluster OpenSearch de LABORATORIO ligero y EFIMERO  (oslab)
+# -----------------------------------------------------------------------------
+# Objetivo: un cluster pequeno con almacenamiento EFIMERO (emptyDir, disco local
+# del nodo) y poca RAM, para practicar Alerting / Anomaly Detection /
+# Observability / Snapshots / ISM / merge policies SIN tocar el cluster real.
+#
+# Claves de diseno (lo que pidio Ivan):
+#   - Almacenamiento emptyDir  -> NO usa el NFS compartido (que era el cuello de
+#     botella de la ingesta). Es disco LOCAL del worker; al ser el dataset
+#     pequeno, cabe entero en el page cache del SO -> "todo en RAM".
+#     OJO: emptyDir es EFIMERO: si el pod se reinicia, ese nodo pierde sus shards
+#     (se recuperan de las replicas). Si caen los 3 a la vez -> se pierde el dato.
+#     Es exactamente lo que queremos para un lab desechable.
+#   - Heap 2 GB (-Xms2g -Xmx2g).
+#   - Pod RAM: request 2.5Gi / limit 3Gi  (2 GB heap + ~1 GB page cache/off-heap).
+#   - Pod CPU: request 0.5 / limit 2.
+#   - Mismo operador (opensearch.org/v1), version 3.6.0, Dashboards incluido.
+#
+# Despliegue:
+#   kubectl apply -f k8s/oslab-cluster.yaml
+#   # (el secret de admin se copia aparte, ver k8s/README-oslab.md)
+#   kubectl get opensearchcluster -n opensearch-lab -w
+#
+# Borrado total (deja el entorno como estaba):
+#   kubectl delete opensearchcluster oslab -n opensearch-lab
+#   kubectl delete namespace opensearch-lab
+# =============================================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: opensearch-lab
+---
+apiVersion: opensearch.org/v1
+kind: OpenSearchCluster
+metadata:
+  name: oslab
+  namespace: opensearch-lab
+spec:
+  general:
+    version: "3.6.0"
+    httpPort: 9200
+    serviceName: oslab
+    vendor: Opensearch
+    image: "docker.io/opensearchproject/opensearch:3.6.0"
+    # Necesario para mmapfs / bootstrap checks (sysctl vm.max_map_count=262144).
+    setVMMaxMapCount: true
+    drainDataNodes: true
+    # Expone metricas para Prometheus (igual que el cluster real). El
+    # ServiceMonitor se etiqueta para que lo recoja tu stack de 'monitoring'.
+    monitoring:
+      enable: true
+      scrapeInterval: "30s"
+      monitoringUserSecret: opensearch-admin-credentials
+      tlsConfig:
+        insecureSkipVerify: true
+      labels:
+        release: monitoring
+  security:
+    config:
+      adminCredentialsSecret:
+        name: opensearch-admin-credentials   # se copia desde el ns 'opensearch'
+    tls:
+      http:
+        generate: true
+      transport:
+        generate: true
+        perNode: true
+  dashboards:
+    enable: true
+    version: "3.6.0"
+    replicas: 1
+    image: "docker.io/opensearchproject/opensearch-dashboards:3.6.0"
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "512Mi"
+      limits:
+        cpu: "500m"
+        memory: "1Gi"
+  nodePools:
+    - component: nodes
+      replicas: 3
+      roles:
+        - master
+        - data
+        - ingest
+      # 2 GB de heap (regla: <= 50% de la RAM del contenedor).
+      jvm: "-Xms2g -Xmx2g"
+      # ALMACENAMIENTO EFIMERO: disco local del nodo, NO el NFS compartido.
+      persistence:
+        emptyDir: {}
+      # diskSize es ignorado con emptyDir, pero el CRD lo pide.
+      diskSize: "5Gi"
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "2560Mi"   # 2.5 Gi
+        limits:
+          cpu: "1"
+          memory: "3Gi"

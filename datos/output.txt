@@ -1,0 +1,218 @@
+index                                                            shard prirep state      docs   store ip          node
+.kibana_-126216474_privatetenant_1                               0     p      STARTED       1   5.2kb 10.130.2.8  opensearch-bi-masters-0
+.kibana_-126216474_privatetenant_1                               0     r      STARTED       1   5.2kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_-652229939_administrator_1                               0     r      STARTED       6  19.7kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_-652229939_administrator_1                               0     p      STARTED       6  19.7kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_-81203650_develall_1                                     0     r      STARTED       1   5.2kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_-81203650_develall_1                                     0     p      STARTED       1   5.2kb 10.130.2.8  opensearch-bi-masters-0
+.kibana_1                                                        0     p      STARTED    1169 497.2kb 10.130.2.8  opensearch-bi-masters-0
+.kibana_1                                                        0     r      STARTED    1169 497.2kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_1129243757_systematp_1                                   0     p      STARTED       1   5.2kb 10.130.2.8  opensearch-bi-masters-0
+.kibana_1129243757_systematp_1                                   0     r      STARTED       1   5.2kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_1850611908_mamtestadmin_1                                0     r      STARTED       1   5.3kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_1850611908_mamtestadmin_1                                0     p      STARTED       1   5.3kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_2                                                        0     r      STARTED    1171 420.8kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_2                                                        0     p      STARTED    1171 420.8kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_643166065_systemall_1                                    0     r      STARTED       1   5.2kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_643166065_systemall_1                                    0     p      STARTED       1   5.2kb 10.131.2.19 opensearch-bi-masters-1
+.kibana_92668751_admin_1                                         0     r      STARTED       1   5.3kb 10.128.4.11 opensearch-bi-masters-2
+.kibana_92668751_admin_1                                         0     p      STARTED       1   5.3kb 10.130.2.8  opensearch-bi-masters-0
+.opendistro-alerting-alert-history-2026.04.26-000010             0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-alerting-alert-history-2026.04.26-000010             0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-alerting-alert-history-2026.05.26-000011             0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-alerting-alert-history-2026.05.26-000011             0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-alerting-alerts                                      0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-alerting-alerts                                      0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-alerting-config                                      0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-alerting-config                                      0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-config                                           0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-config                                           0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.10-000294          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.10-000294          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.11-000295          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.11-000295          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.12-000296          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.12-000296          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.14-000297          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.14-000297          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.15-000298          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.15-000298          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.16-000299          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.16-000299          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.17-000300          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.17-000300          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.18-000301          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.18-000301          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.19-000302          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.19-000302          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.20-000303          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.20-000303          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.21-000304          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.21-000304          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.22-000305          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.22-000305          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.23-000306          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.23-000306          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.24-000307          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.24-000307          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.25-000308          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.25-000308          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.26-000309          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.26-000309          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.27-000310          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.27-000310          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.29-000311          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.05.29-000311          0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.30-000312          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.30-000312          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.05.31-000313          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.05.31-000313          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.06.01-000314          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.01-000314          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.06.02-000315          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.02-000315          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.06.03-000316          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.03-000316          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.06.04-000317          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.04-000317          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-ism-managed-index-history-2026.06.05-000318          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.05-000318          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.06.06-000319          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.06-000319          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.06.07-000320          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.07-000320          0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opendistro-ism-managed-index-history-2026.06.09-000321          0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opendistro-ism-managed-index-history-2026.06.09-000321          0     p      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opendistro-job-scheduler-lock                                   0     r      STARTED      10   2.4mb 10.128.4.11 opensearch-bi-masters-2
+.opendistro-job-scheduler-lock                                   0     p      STARTED      10   2.4mb 10.131.2.19 opensearch-bi-masters-1
+.opendistro-reports-definitions                                  0     r      STARTED       2  10.3kb 10.128.4.11 opensearch-bi-masters-2
+.opendistro-reports-definitions                                  0     p      STARTED       2  10.3kb 10.130.2.8  opensearch-bi-masters-0
+.opendistro-reports-definitions                                  0     r      STARTED       2  10.3kb 10.131.2.19 opensearch-bi-masters-1
+.opendistro-reports-instances                                    0     r      STARTED     164 236.1kb 10.128.4.11 opensearch-bi-masters-2
+.opendistro-reports-instances                                    0     p      STARTED     164 236.1kb 10.130.2.8  opensearch-bi-masters-0
+.opendistro-reports-instances                                    0     r      STARTED     164 236.1kb 10.131.2.19 opensearch-bi-masters-1
+.opendistro_security                                             0     r      STARTED      10    60kb 10.128.4.11 opensearch-bi-masters-2
+.opendistro_security                                             0     p      STARTED      10    60kb 10.130.2.8  opensearch-bi-masters-0
+.opendistro_security                                             0     r      STARTED      10    60kb 10.131.2.19 opensearch-bi-masters-1
+.opensearch-alerting-config-lock                                 0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opensearch-alerting-config-lock                                 0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opensearch-notifications-config                                 0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opensearch-notifications-config                                 0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opensearch-notifications-config                                 0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.opensearch-observability                                        0     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+.opensearch-observability                                        0     p      STARTED       0    208b 10.130.2.8  opensearch-bi-masters-0
+.opensearch-observability                                        0     r      STARTED       0    208b 10.131.2.19 opensearch-bi-masters-1
+.opensearch-sap-log-types-config                                 0     r      STARTED                 10.128.4.11 opensearch-bi-masters-2
+.opensearch-sap-log-types-config                                 0     p      STARTED                 10.130.2.8  opensearch-bi-masters-0
+.opensearch-sap-log-types-config                                 0     r      STARTED                 10.131.2.19 opensearch-bi-masters-1
+.plugins-ml-config                                               0     r      STARTED       1     4kb 10.128.4.11 opensearch-bi-masters-2
+.plugins-ml-config                                               0     p      STARTED       1     4kb 10.130.2.8  opensearch-bi-masters-0
+.plugins-ml-config                                               0     r      STARTED       1     4kb 10.131.2.19 opensearch-bi-masters-1
+.ql-datasources                                                  0     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+.ql-datasources                                                  0     p      STARTED       0    208b 10.130.2.8  opensearch-bi-masters-0
+.ql-datasources                                                  0     r      STARTED       0    208b 10.131.2.19 opensearch-bi-masters-1
+.tasks                                                           0     p      STARTED       1   7.6kb 10.130.2.8  opensearch-bi-masters-0
+.tasks                                                           0     r      STARTED       1   7.6kb 10.131.2.19 opensearch-bi-masters-1
+ast_device_devel_main_ast_site_all_en_gb_index_1                 0     r      STARTED       8  44.6kb 10.128.4.11 opensearch-bi-masters-2
+ast_device_devel_main_ast_site_all_en_gb_index_1                 0     p      STARTED       8  49.8kb 10.131.2.19 opensearch-bi-masters-1
+ast_device_devel_main_ast_site_all_en_gb_index_1                 1     r      STARTED       8  15.2kb 10.128.4.11 opensearch-bi-masters-2
+ast_device_devel_main_ast_site_all_en_gb_index_1                 1     p      STARTED       8  71.1kb 10.130.2.8  opensearch-bi-masters-0
+ast_nodeinfo_devel_main_ast_site_all_en_gb_index_1               0     r      STARTED   35779   8.4mb 10.128.4.11 opensearch-bi-masters-2
+ast_nodeinfo_devel_main_ast_site_all_en_gb_index_1               0     p      STARTED   35779   8.5mb 10.130.2.8  opensearch-bi-masters-0
+ast_nodeinfo_devel_main_ast_site_all_en_gb_index_1               1     r      STARTED   36355   8.7mb 10.128.4.11 opensearch-bi-masters-2
+ast_nodeinfo_devel_main_ast_site_all_en_gb_index_1               1     p      STARTED   36397   8.6mb 10.131.2.19 opensearch-bi-masters-1
+ast_notifications_devel_main_ast_site_all_en_gb_index_1          0     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+ast_notifications_devel_main_ast_site_all_en_gb_index_1          0     p      STARTED       0    208b 10.130.2.8  opensearch-bi-masters-0
+ast_notifications_devel_main_ast_site_all_en_gb_index_1          1     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+ast_notifications_devel_main_ast_site_all_en_gb_index_1          1     p      STARTED       0    208b 10.131.2.19 opensearch-bi-masters-1
+ast_storageunit_devel_main_ast_site_all_en_gb_index_1            0     p      STARTED       2  23.6kb 10.130.2.8  opensearch-bi-masters-0
+ast_storageunit_devel_main_ast_site_all_en_gb_index_1            0     r      STARTED       2  11.9kb 10.131.2.19 opensearch-bi-masters-1
+ast_storageunit_devel_main_ast_site_all_en_gb_index_1            1     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+ast_storageunit_devel_main_ast_site_all_en_gb_index_1            1     p      STARTED       0    208b 10.131.2.19 opensearch-bi-masters-1
+ast_summarysobjects_devel_main_ast_site_all_en_gb_index_1        0     r      STARTED     504 233.4kb 10.128.4.11 opensearch-bi-masters-2
+ast_summarysobjects_devel_main_ast_site_all_en_gb_index_1        0     p      STARTED     504 233.4kb 10.131.2.19 opensearch-bi-masters-1
+ast_summarysobjects_devel_main_ast_site_all_en_gb_index_1        1     r      STARTED     508 233.5kb 10.128.4.11 opensearch-bi-masters-2
+ast_summarysobjects_devel_main_ast_site_all_en_gb_index_1        1     p      STARTED     508 233.5kb 10.130.2.8  opensearch-bi-masters-0
+ast_summarystoragecaches_devel_main_ast_site_all_en_gb_index_1   0     p      STARTED     441 309.4kb 10.130.2.8  opensearch-bi-masters-0
+ast_summarystoragecaches_devel_main_ast_site_all_en_gb_index_1   0     r      STARTED     441 309.4kb 10.131.2.19 opensearch-bi-masters-1
+ast_summarystoragecaches_devel_main_ast_site_all_en_gb_index_1   1     r      STARTED     471 314.7kb 10.128.4.11 opensearch-bi-masters-2
+ast_summarystoragecaches_devel_main_ast_site_all_en_gb_index_1   1     p      STARTED     471 314.7kb 10.131.2.19 opensearch-bi-masters-1
+ast_summarystorageunit_devel_main_ast_site_all_en_gb_index_1     0     p      STARTED       0    208b 10.130.2.8  opensearch-bi-masters-0
+ast_summarystorageunit_devel_main_ast_site_all_en_gb_index_1     0     r      STARTED       0    208b 10.131.2.19 opensearch-bi-masters-1
+ast_summarystorageunit_devel_main_ast_site_all_en_gb_index_1     1     r      STARTED       0    208b 10.128.4.11 opensearch-bi-masters-2
+ast_summarystorageunit_devel_main_ast_site_all_en_gb_index_1     1     p      STARTED       0    208b 10.130.2.8  opensearch-bi-masters-0
+ast_task_devel_main_ast_site_all_en_gb_index_1                   0     r      STARTED    7476   3.6mb 10.128.4.11 opensearch-bi-masters-2
+ast_task_devel_main_ast_site_all_en_gb_index_1                   0     p      STARTED    7482     4mb 10.131.2.19 opensearch-bi-masters-1
+ast_task_devel_main_ast_site_all_en_gb_index_1                   1     r      STARTED    7368   3.6mb 10.128.4.11 opensearch-bi-masters-2
+ast_task_devel_main_ast_site_all_en_gb_index_1                   1     p      STARTED    7370   3.9mb 10.130.2.8  opensearch-bi-masters-0
+back_keycloak                                                    0     p      STARTED 1314062 872.2mb 10.130.2.8  opensearch-bi-masters-0
+back_keycloak                                                    0     r      STARTED 1314062 872.2mb 10.131.2.19 opensearch-bi-masters-1
+bpm_act_inst_devel_main_bpm_site_all_en_gb_index_1               0     r      STARTED 1709838 706.5mb 10.128.4.11 opensearch-bi-masters-2
+bpm_act_inst_devel_main_bpm_site_all_en_gb_index_1               0     p      STARTED 1712714 711.1mb 10.130.2.8  opensearch-bi-masters-0
+bpm_human_devel_main_bpm_site_all_en_gb_index_1                  0     r      STARTED    9206   4.4mb 10.128.4.11 opensearch-bi-masters-2
+bpm_human_devel_main_bpm_site_all_en_gb_index_1                  0     p      STARTED    9206   4.3mb 10.130.2.8  opensearch-bi-masters-0
+bpm_macros_devel_main_bpm_site_all_en_gb_index_1                 0     p      STARTED  921626 357.4mb 10.130.2.8  opensearch-bi-masters-0
+bpm_macros_devel_main_bpm_site_all_en_gb_index_1                 0     r      STARTED  920080 353.2mb 10.131.2.19 opensearch-bi-masters-1
+bpm_orders_devel_main_bpm_site_all_en_gb_index_1                 0     r      STARTED  223910  59.8mb 10.128.4.11 opensearch-bi-masters-2
+bpm_orders_devel_main_bpm_site_all_en_gb_index_1                 0     p      STARTED  224287  59.4mb 10.130.2.8  opensearch-bi-masters-0
+bpm_proc_inst_devel_main_bpm_site_all_en_gb_index_1              0     r      STARTED  224971  75.3mb 10.128.4.11 opensearch-bi-masters-2
+bpm_proc_inst_devel_main_bpm_site_all_en_gb_index_1              0     p      STARTED  225360  74.9mb 10.131.2.19 opensearch-bi-masters-1
+keycloak_system_main_keycloak_site_all_en_gb_index-000001        0     p      STARTED 1427195 771.3mb 10.128.4.11 opensearch-bi-masters-2
+opensearch_dashboards_sample_data_logs                           0     r      STARTED   14074     8mb 10.128.4.11 opensearch-bi-masters-2
+opensearch_dashboards_sample_data_logs                           0     p      STARTED   14074     8mb 10.131.2.19 opensearch-bi-masters-1
+scheduling_content_system_main_scheduling_site_atp_en_gb_index_0 0     r      STARTED  232611  88.1mb 10.128.4.11 opensearch-bi-masters-2
+scheduling_content_system_main_scheduling_site_atp_en_gb_index_0 0     p      STARTED  232679  86.2mb 10.131.2.19 opensearch-bi-masters-1
+scheduling_content_system_main_scheduling_site_atp_en_gb_index_0 1     r      STARTED  232097  88.8mb 10.128.4.11 opensearch-bi-masters-2
+scheduling_content_system_main_scheduling_site_atp_en_gb_index_0 1     p      STARTED  232105  88.2mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2025.07.02                                     0     r      STARTED    4079   5.1mb 10.128.4.11 opensearch-bi-masters-2
+security-auditlog-2025.07.02                                     0     p      STARTED    4079   5.1mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.03                                     0     p      STARTED   28593   2.8mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.03                                     0     r      STARTED   28593   2.8mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.04                                     0     p      STARTED   28557   2.6mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.04                                     0     r      STARTED   28557   3.1mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.05                                     0     p      STARTED   28537   2.9mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.05                                     0     r      STARTED   28537   2.5mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.06                                     0     p      STARTED   28557   2.2mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.06                                     0     r      STARTED   28557   2.8mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.07                                     0     p      STARTED   28557   3.1mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.07                                     0     r      STARTED   28557   2.8mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.08                                     0     p      STARTED   28557   2.9mb 10.130.2.8  opensearch-bi-masters-0
+security-auditlog-2026.06.08                                     0     r      STARTED   28557   2.7mb 10.131.2.19 opensearch-bi-masters-1
+security-auditlog-2026.06.09                                     0     r      STARTED   16986   2.5mb 10.128.4.11 opensearch-bi-masters-2
+security-auditlog-2026.06.09                                     0     p      STARTED   16986     2mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.02-14686                                     0     r      STARTED    5447   3.2mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.02-14686                                     0     p      STARTED    5447   3.2mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.02-14686                                     0     r      STARTED    5447   3.2mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.03-14687                                     0     r      STARTED    5418   3.3mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.03-14687                                     0     p      STARTED    5418   3.3mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.03-14687                                     0     r      STARTED    5418   3.3mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.04-14688                                     0     r      STARTED    5398   3.3mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.04-14688                                     0     p      STARTED    5398   8.9mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.04-14688                                     0     r      STARTED    5398   3.3mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.05-14689                                     0     r      STARTED    5486   3.4mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.05-14689                                     0     p      STARTED    5486   3.5mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.05-14689                                     0     r      STARTED    5486   3.5mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.06-14690                                     0     r      STARTED    4661   4.9mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.06-14690                                     0     p      STARTED    4661   1.9mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.06-14690                                     0     r      STARTED    4661   1.9mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.07-14691                                     0     r      STARTED    4687   1.9mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.07-14691                                     0     p      STARTED    4687   1.9mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.07-14691                                     0     r      STARTED    4687   1.9mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.08-14692                                     0     r      STARTED    5775   3.6mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.08-14692                                     0     p      STARTED    5775   9.9mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.08-14692                                     0     r      STARTED    5775   3.6mb 10.131.2.19 opensearch-bi-masters-1
+top_queries-2026.06.09-14693                                     0     r      STARTED      20   3.9mb 10.128.4.11 opensearch-bi-masters-2
+top_queries-2026.06.09-14693                                     0     p      STARTED      20     4mb 10.130.2.8  opensearch-bi-masters-0
+top_queries-2026.06.09-14693                                     0     r      STARTED      20   3.9mb 10.131.2.19 opensearch-bi-masters-1
+voyager_collection_system_atp_site_atp_en_gb_index_0             0     r      STARTED      26  57.3kb 10.128.4.11 opensearch-bi-masters-2
+voyager_collection_system_atp_site_atp_en_gb_index_0             0     p      STARTED      26  39.9kb 10.130.2.8  opensearch-bi-masters-0
+voyager_collection_system_atp_site_atp_en_gb_index_0             1     r      STARTED      21  21.5kb 10.128.4.11 opensearch-bi-masters-2
+voyager_collection_system_atp_site_atp_en_gb_index_0             1     p      STARTED      21  21.5kb 10.131.2.19 opensearch-bi-masters-1
+voyager_content_system_atp_site_atp_en_gb_index_0                0     r      STARTED  612305 142.7mb 10.128.4.11 opensearch-bi-masters-2
+voyager_content_system_atp_site_atp_en_gb_index_0                0     p      STARTED  612306 142.4mb 10.131.2.19 opensearch-bi-masters-1
+voyager_content_system_atp_site_atp_en_gb_index_0                1     r      STARTED  644167   148mb 10.128.4.11 opensearch-bi-masters-2
+voyager_content_system_atp_site_atp_en_gb_index_0                1     p      STARTED  644167 147.8mb 10.130.2.8  opensearch-bi-masters-0
+voyager_eventlog_system_atp_site_atp_en_gb_index_1               0     r      STARTED     558 203.8kb 10.128.4.11 opensearch-bi-masters-2
+voyager_eventlog_system_atp_site_atp_en_gb_index_1               0     p      STARTED     558 153.3kb 10.130.2.8  opensearch-bi-masters-0
+voyager_eventlog_system_atp_site_atp_en_gb_index_1               1     r      STARTED     297 109.6kb 10.128.4.11 opensearch-bi-masters-2
+voyager_eventlog_system_atp_site_atp_en_gb_index_1               1     p      STARTED     297 123.4kb 10.131.2.19 opensearch-bi-masters-1
