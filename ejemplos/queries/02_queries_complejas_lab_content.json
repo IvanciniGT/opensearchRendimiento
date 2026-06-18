@@ -1,0 +1,451 @@
+// Queries complejas estilo Tedial, ADAPTADAS y VERIFICADAS contra el indice
+// de laboratorio `lab_content` (10.1M docs generados por carga/generador.py).
+//
+// El generador produce EXACTAMENTE el mismo modelo padre-hijo que el real:
+//   CONTAINER  join_field {name: level_1}                 doc_type CONTAINER
+//   LOCATOR    join_field {parent, name: level_2}         doc_type LOCATOR   (+ STRATA--LOCATOR)
+//   SUBCLIP    join_field {parent, name: subclip}         doc_type CONTAINER (ISSUBCLIP=true)
+//   LOC subclip join_field {parent, name: subclip_level_2} doc_type LOCATOR
+//
+// GOTCHA IMPORTANTE (descubierto verificando):
+//   STRATA--LOCATOR.CATALOGATIONOBJECT es 'text' SIN .keyword -> un `term`
+//   con "FOOTBALL" NO casa (se analiza a minusculas). Para filtrar por tipo de
+//   locator usar STRATA--LOCATOR.TYPEID.keyword = "STRATA_CORE:FOOTBALL".
+//   Valores reales en lab_content: STRATA_CORE:{FOOTBALL,QC,NONTRANS,SUBJECT_MATTER,COM,RIGHTS,SPEECH_ROUND}
+//   SOURCEENGINE.keyword: {MANUAL, AI_VISION, BATON, INGEST, SPEECH2TEXT}
+
+// =====================================================================
+// A) CONTAINERS de video que tienen algun "gol destacado":
+//    locator FOOTBALL con SCORE>=70. Trae los goles (inner_hits ordenados
+//    por SCORE), facetas por CODEC del container y ordena por fecha.
+//    -> 10.000 containers, ~5.9s
+// =====================================================================
+GET lab_content/_search
+{
+  "size": 3,
+  "_source": { "includes": ["EDITORIAL--CONTAINER.MEDIAID", "EDITORIAL--CONTAINER.SUBTYPE", "EDITORIAL_CORE--TECHNICAL_INFO.CODEC"] },
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "gelastic_deleted": false } },
+        { "term": { "doc_type.keyword": "CONTAINER" } },
+        { "term": { "EDITORIAL--CONTAINER.ISSUBCLIP": false } }
+      ],
+      "must": [
+        {
+          "has_child": {
+            "type": "level_2",
+            "score_mode": "max",
+            "query": {
+              "bool": {
+                "filter": [
+                  { "term": { "doc_type.keyword": "LOCATOR" } },
+                  { "term": { "STRATA--LOCATOR.TYPEID.keyword": "STRATA_CORE:FOOTBALL" } },
+                  { "range": { "STRATA--LOCATOR.SCORE": { "gte": 70 } } }
+                ]
+              }
+            },
+            "inner_hits": {
+              "name": "goles_destacados",
+              "size": 2,
+              "_source": ["STRATA--LOCATOR.SCORE", "STRATA--LOCATOR.SEGMENTENTRYPOINT", "STRATA_DYNAMIC--FOOTBALL.COMPETITION_NAME", "STRATA_DYNAMIC--FOOTBALL.HOME_TEAM_NAME", "STRATA_DYNAMIC--FOOTBALL.AWAY_TEAM_NAME"],
+              "sort": [ { "STRATA--LOCATOR.SCORE": { "order": "desc" } } ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "por_codec":   { "terms": { "field": "EDITORIAL_CORE--TECHNICAL_INFO.CODEC.keyword", "size": 6 } },
+    "por_subtype": { "terms": { "field": "EDITORIAL--CONTAINER.SUBTYPE.keyword", "size": 10 } }
+  },
+  "sort": [ { "EDITORIAL--CONTAINER.CREATIONDATE": { "order": "desc", "missing": "_last" } } ]
+}
+
+
+// =====================================================================
+// B) LOCATORs cuyo CONTAINER padre es UHD/4K (has_parent), con FACETAS
+//    filtradas por SOURCEENGINE=BATON y post_filter (patron de buscador
+//    con facetas, identico al de tedial.md "Busqueda de Locators con Agregado").
+//    -> 10.000 locators, ~8s
+// =====================================================================
+GET lab_content/_search
+{
+  "size": 2,
+  "_source": ["STRATA--LOCATOR.SCORE", "STRATA--LOCATOR.TYPEID", "STRATA--LOCATOR.SOURCEENGINE"],
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "gelastic_deleted": false } },
+        { "term": { "doc_type.keyword": "LOCATOR" } }
+      ],
+      "must": [
+        {
+          "has_parent": {
+            "parent_type": "level_1",
+            "query": {
+              "bool": {
+                "filter": [
+                  { "term": { "doc_type.keyword": "CONTAINER" } },
+                  { "terms": { "EDITORIAL_CORE--TECHNICAL_INFO.DEFINITION.keyword": ["UHD", "4K"] } }
+                ]
+              }
+            },
+            "inner_hits": {
+              "name": "container",
+              "size": 1,
+              "_source": ["EDITORIAL--CONTAINER.MEDIAID", "EDITORIAL_CORE--TECHNICAL_INFO.DEFINITION"]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "tipos_locator": {
+      "filter": { "term": { "STRATA--LOCATOR.SOURCEENGINE.keyword": "BATON" } },
+      "aggs": { "facets_counter": { "terms": { "field": "STRATA--LOCATOR.TYPEID.keyword", "size": 10 } } }
+    }
+  },
+  "sort": [ { "STRATA--LOCATOR.SCORE": { "order": "desc", "missing": "_last" } } ],
+  "post_filter": { "term": { "STRATA--LOCATOR.SOURCEENGINE.keyword": "BATON" } }
+}
+
+
+// =====================================================================
+// C) CLIP raiz -> SUBCLIP -> LOCATOR  (has_child anidado a dos niveles,
+//    cruzando las dos relaciones join: subclip y subclip_level_2).
+//    Devuelve el clip, sus subclips (inner_hits) y los locators de cada
+//    subclip (inner_hits anidado). -> 10.000 clips con subclips, ~1.6s
+// =====================================================================
+GET lab_content/_search
+{
+  "size": 2,
+  "_source": ["EDITORIAL--CONTAINER.MEDIAID"],
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "doc_type.keyword": "CONTAINER" } },
+        { "term": { "EDITORIAL--CONTAINER.ISSUBCLIP": false } }
+      ],
+      "must": [
+        {
+          "has_child": {
+            "type": "subclip",
+            "query": {
+              "bool": {
+                "must": [
+                  { "term": { "doc_type.keyword": "CONTAINER" } },
+                  {
+                    "has_child": {
+                      "type": "subclip_level_2",
+                      "query": { "term": { "doc_type.keyword": "LOCATOR" } },
+                      "inner_hits": {
+                        "name": "locators_del_subclip",
+                        "size": 2,
+                        "_source": ["STRATA--LOCATOR.LOCATORID", "STRATA--LOCATOR.TYPEID"]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "inner_hits": {
+              "name": "subclip",
+              "size": 2,
+              "_source": ["EDITORIAL--CONTAINER.MEDIAID"]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+// #####################################################################
+// #                                                                   #
+// #   PARTE 2 - ANALISIS DE CONSULTAS (slow logs + query insights +   #
+// #   profile + validate + explain). TODO desde Dev Tools.            #
+// #   Salidas reales capturadas contra lab_content (10.1M docs, 3+1). #
+// #                                                                   #
+// #####################################################################
+//
+// Idea base (ver ejemplos/pendiente.md, bloque "Slow logs + Query Insights"):
+//   profile/explain  -> analizan UNA query que YA conozco.
+//   slow logs / insights -> me dicen QUE query tengo que analizar.
+//
+// Jerarquia de herramientas:
+//   Query Insights -> encontrar sospechosos (ranking de queries caras)
+//   Slow logs      -> dejar evidencia en log al superar un umbral
+//   Profile API    -> autopsia: en que se va el tiempo dentro de la query
+//   Validate API   -> como se interpreta/reescribe la query (sin ejecutar scoring)
+//   Explain API    -> por que un documento concreto casa y que score saca
+
+
+// =====================================================================
+// PASO 1 - ACTIVAR SLOW LOGS (por indice, reversible, NO recrea indice)
+// =====================================================================
+// Claves: search|indexing . slowlog.threshold . query|fetch|index . nivel
+//   search vs indexing  -> busquedas lentas vs escrituras lentas
+//   query  vs fetch     -> fase de busqueda/score/aggs  vs  fase de traer _source/highlight/inner_hits
+//   warn/info/debug/trace -> cada nivel es un umbral; mas bajo = mas operaciones entran al log
+PUT /lab_content/_settings
+{
+  "index.search.slowlog.threshold.query.warn": "2s",
+  "index.search.slowlog.threshold.query.info": "200ms",
+  "index.search.slowlog.threshold.fetch.warn": "1s",
+  "index.indexing.slowlog.threshold.index.warn": "1s"
+}
+
+// Ver lo que quedo configurado:
+GET /lab_content/_settings/index.search.slowlog*,index.indexing.slowlog*
+
+// Desactivar (poner a -1 cada umbral). IMPORTANTE para no dejar ruido:
+PUT /lab_content/_settings
+{
+  "index.search.slowlog.threshold.query.warn": "-1",
+  "index.search.slowlog.threshold.query.info": "-1",
+  "index.search.slowlog.threshold.fetch.warn": "-1",
+  "index.indexing.slowlog.threshold.index.warn": "-1"
+}
+
+
+// =====================================================================
+// PASO 2 - ACTIVAR QUERY INSIGHTS (cluster-wide, persistent)
+// =====================================================================
+// Mantiene un Top-N de las queries mas caras por latency / cpu / memory.
+PUT /_cluster/settings
+{
+  "persistent": {
+    "search.insights.top_queries.latency.enabled": true,
+    "search.insights.top_queries.cpu.enabled": true,
+    "search.insights.top_queries.memory.enabled": true,
+    "search.insights.top_queries.latency.top_n_size": 10,
+    "search.insights.top_queries.latency.window_size": "5m"
+  }
+}
+
+// Desactivar:
+PUT /_cluster/settings
+{
+  "persistent": {
+    "search.insights.top_queries.latency.enabled": false,
+    "search.insights.top_queries.cpu.enabled": false,
+    "search.insights.top_queries.memory.enabled": false
+  }
+}
+
+
+// =====================================================================
+// PASO 3 - GENERAR TRAFICO: lanzar las queries A / B / C de la PARTE 1
+// =====================================================================
+// Lanza A y B varias veces (son las caras). Cada ejecucion:
+//   - si supera el umbral -> entra en el slow log de los pods
+//   - alimenta el ranking de Query Insights (ventana 5m)
+// (No repito aqui las queries; usa las de arriba.)
+
+
+// =====================================================================
+// PASO 4a - ANALIZAR CON QUERY INSIGHTS  (quien es el sospechoso)
+// =====================================================================
+GET /_insights/top_queries?type=latency
+GET /_insights/top_queries?type=cpu
+GET /_insights/top_queries?type=memory
+//
+// Salida real (resumen) tras lanzar A/B/C:
+//   type=latency : 8097 ms (query B, has_parent+facetas) > 1641 ms (C) > 247 ms (A cacheada)
+//   type=cpu     : 4.62 ms-CPU (~4622792 ns)  el mas caro NO coincide con el mas lento
+//   type=memory  : 284 KB  el de mas memoria es otro distinto
+//
+// LECTURA: el que mas TARDA (B) no es el que mas CPU consume. Por eso se miran
+// los tres ejes, no solo latency: una query puede ser "barata en reloj" pero
+// quemar CPU/heap y castigar al cluster bajo concurrencia.
+
+
+// =====================================================================
+// PASO 4b - ANALIZAR CON SLOW LOGS  (la evidencia en los pods)
+// =====================================================================
+// Los slow logs NO salen por la API: se escriben en el log de cada nodo.
+// En Kubernetes/OpenShift hay que ir a los pods:
+//
+//   kubectl logs -n proyecto-ivan <pod-opensearch> | grep -i slowlog
+//   kubectl logs -n proyecto-ivan -l opster.io/opensearch-cluster=<cluster> --tail=500 | grep slowlog
+//   oc logs    -n proyecto-ivan <pod-opensearch> | grep -i slowlog
+//
+// Una linea de search slow log incluye: indice, [shard], took, took_millis,
+// total_hits, types, stats, search_type, total_shards y la SOURCE (la query).
+// Distingue por nombre de logger:  index.search.slowlog.query  vs  ...fetch.
+//
+// OJO efecto cache: si repites la misma query, la 2a vez puede bajar de 200ms
+// (page cache + query cache + filtros cacheados) y dejar de aparecer. Para la
+// demo, varia algun valor (p.ej. el SCORE>=N) o usa umbrales mas bajos.
+
+
+// =====================================================================
+// PASO 4c - PROFILE  (la autopsia: donde se va el tiempo)
+// =====================================================================
+// Anade "profile": true a la query A. Devuelve un arbol por shard.
+GET /lab_content/_search
+{
+  "profile": true,
+  "size": 3,
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "gelastic_deleted": false } },
+        { "term": { "doc_type.keyword": "CONTAINER" } },
+        { "term": { "EDITORIAL--CONTAINER.ISSUBCLIP": false } }
+      ],
+      "must": [
+        { "has_child": {
+            "type": "level_2", "score_mode": "max",
+            "query": { "bool": { "filter": [
+              { "term": { "doc_type.keyword": "LOCATOR" } },
+              { "term": { "STRATA--LOCATOR.TYPEID.keyword": "STRATA_CORE:FOOTBALL" } },
+              { "range": { "STRATA--LOCATOR.SCORE": { "gte": 70 } } }
+            ] } },
+            "inner_hits": { "name": "goles", "size": 2 }
+        } }
+      ]
+    }
+  },
+  "aggs": { "por_codec": { "terms": { "field": "EDITORIAL_CORE--TECHNICAL_INFO.CODEC.keyword", "size": 6 } } },
+  "sort": [ { "EDITORIAL--CONTAINER.CREATIONDATE": { "order": "desc", "missing": "_last" } } ]
+}
+//
+// Como leer el JSON de profile:
+//   profile.shards[]            -> un elemento por shard (aqui 3)
+//     .searches[].rewrite_time  -> tiempo de REESCRITURA de la query (antes de ejecutar)
+//     .searches[].query[]       -> arbol de queries Lucene con time_in_nanos y breakdown:
+//          create_weight  -> preparar la query
+//          build_scorer   -> construir el iterador de documentos que casan
+//          next_doc/advance -> recorrer esos documentos
+//          score          -> calcular _score (0 si todo es filter)
+//          match          -> coste de confirmar el match (caro en joins)
+//     .searches[].collector[]   -> recogida + ordenacion (sort, size, top docs)
+//     .aggregations[]           -> coste de cada agregacion, APARTE de la query
+//
+// SALIDA REAL (1 shard, query con profile y took ~1171 ms en frio):
+//   rewrite_time .................... 601 ms   <-- ojo: la mitad del tiempo es REESCRIBIR
+//   ConstantScoreQuery (top) ........ 423 ms
+//       build_scorer ................ 422 ms
+//       next_doc .................... 394 ms
+//       match ....................... 393 ms
+//   collector (QueryCollectorManager) 364 ms
+//   aggregations (terms CODEC) ....... 28 ms
+//
+//   Arbol interno del has_child (lo que cuesta el JOIN padre-hijo):
+//     BooleanQuery ..................... 149 ms
+//       GlobalOrdinalsWithScoreQuery ... 55 ms   <-- el join level_1<-level_2
+//       TermQuery (doc_type LOCATOR) ... 14 ms
+//       TermQuery (TYPEID FOOTBALL) ..... 8 ms
+//       TermQuery (...) ................. 9 ms
+//
+// CONCLUSION del profile:
+//   - El coste NO esta en las agregaciones (28 ms): esta en el JOIN y en
+//     recorrer/confirmar candidatos (build_scorer/match) + el rewrite del join.
+//   - El rewrite_time alto (601 ms) es tipico de has_child: tiene que preparar
+//     los global ordinals del join_field. Por eso "eager_global_ordinals": true
+//     en el mapping ayuda (los precalcula en refresh, no en query-time).
+//   - El collector (364 ms) pesa por el sort sobre EDITORIAL--CONTAINER.CREATIONDATE.
+//
+// IMPORTANTE: profile ANADE overhead. Sus numeros sirven para comparar PARTES
+// entre si, no como latencia real. Para latencia real usa "took" o Query Insights.
+
+
+// =====================================================================
+// PASO 4d - VALIDATE  (como INTERPRETA OpenSearch tu query)
+// =====================================================================
+// No ejecuta scoring; te muestra en que Lucene query se reescribe. Util para
+// ver el join y para pillar anti-patrones (p.ej. un term sobre campo text).
+GET /lab_content/_validate/query?explain=true&rewrite=true
+{
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "gelastic_deleted": false } },
+        { "term": { "doc_type.keyword": "CONTAINER" } },
+        { "term": { "EDITORIAL--CONTAINER.ISSUBCLIP": false } }
+      ],
+      "must": [
+        { "has_child": {
+            "type": "level_2", "score_mode": "max",
+            "query": { "bool": { "filter": [
+              { "term": { "doc_type.keyword": "LOCATOR" } },
+              { "term": { "STRATA--LOCATOR.TYPEID.keyword": "STRATA_CORE:FOOTBALL" } },
+              { "range": { "STRATA--LOCATOR.SCORE": { "gte": 70 } } }
+            ] } }
+        } }
+      ]
+    }
+  }
+}
+//
+// SALIDA REAL (valid: true). La explanation muestra que el has_child se traduce a:
+//   +GlobalOrdinalsQuery{ joinField=join_field#level_1, min=1, max=...,
+//       fromQuery= #doc_type.keyword:LOCATOR
+//                  #STRATA--LOCATOR.TYPEID.keyword:STRATA_CORE:FOOTBALL
+//                  #IndexOrDocValuesQuery(STRATA--LOCATOR.SCORE:[70 TO ...])
+//                  #join_field:level_2 }
+//   #gelastic_deleted:F  #doc_type.keyword:CONTAINER  #EDITORIAL--CONTAINER.ISSUBCLIP:F
+//
+// LECTURA:
+//   - El '+' = clausula obligatoria; el '#' = clausula filter (sin score).
+//   - El range sobre SCORE usa IndexOrDocValuesQuery: OpenSearch elige en runtime
+//     entre indice invertido (BKD) y doc_values segun lo selectivo del filtro.
+//   - GOTCHA didactico: si aqui filtraras por CATALOGATIONOBJECT (campo 'text'
+//     SIN .keyword) verias el termino en MINUSCULAS ("football") y por eso un
+//     term "FOOTBALL" da 0 resultados. Por eso filtramos por TYPEID.keyword.
+
+
+// =====================================================================
+// PASO 4e - EXPLAIN  (por que ESTE documento casa y que score saca)
+// =====================================================================
+// explain es para UN documento concreto. Necesita _id y, por el join, el routing
+// (que en este modelo es SIEMPRE el mediaid del container raiz).
+GET /lab_content/_explain/BIG_1_00068059?routing=BIG_1_00068059
+{
+  "query": {
+    "match": { "EDITORIAL_CORE--EDC_DUBLIN_CORE.DC_DESCRIPTION.DM_DESCRIPTION": "million" }
+  }
+}
+//
+// SALIDA REAL (matched: true, _score 2.0560558). Desglose BM25:
+//   2.05606 = boost * idf * tf
+//     idf = 4.68549  = log(1 + (N - n + 0.5)/(n + 0.5))
+//         n = 2074      docs que contienen el termino "million"
+//         N = 224798    docs con ese campo
+//     tf  = 0.43881  = freq / (freq + k1*(1 - b + b*dl/avgdl))
+//         freq = 1.0    veces que aparece el termino en el doc
+//         k1   = 1.2    saturacion de termino (default BM25)
+//         b    = 0.75   normalizacion por longitud (default BM25)
+//         dl   = 10.0   longitud del campo en ESTE doc
+//         avgdl= 9.19   longitud media del campo en el indice
+//
+// LECTURA:
+//   - idf alto => termino RARO (pocos docs lo tienen) => puntua mas.
+//   - tf con saturacion: repetir el termino sube el score pero con rendimientos
+//     decrecientes (k1); dl/avgdl penaliza campos largos (b).
+//   - Si matched fuese false, explain te dice QUE clausula fallo ("no match on
+//     required clause" / "Failure to meet condition of prohibited clause").
+
+
+// =====================================================================
+// RESUMEN: que herramienta para que pregunta
+// =====================================================================
+//   "el buscador va lento"            -> Query Insights (latency/cpu/memory)
+//   "quiero traza historica en log"   -> Slow logs (umbral por indice)
+//   "por que TARDA esta query"        -> profile (rewrite/build_scorer/collector/aggs)
+//   "como se interpreta mi query"     -> _validate (rewrite del join, term sobre text)
+//   "por que casa/puntua este doc"    -> _explain (BM25: idf/tf)
+//
+// Flujo real de diagnostico:
+//   1. Insights por latency -> identifico la query cara (aqui: la B, 8s)
+//   2. ?Tambien cara en cpu/memory? -> priorizo
+//   3. Activo slow logs si necesito evidencia repetida
+//   4. profile sobre esa query -> veo que el coste es JOIN + match + sort, no aggs
+//   5. Reviso mapping/cardinalidad/joins/sort/inner_hits
+//   6. Decido: eager_global_ordinals (ya esta), sort sobre campo mas barato,
+//      reducir inner_hits/_source, o desnormalizar si el join no escala.
